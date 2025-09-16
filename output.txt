@@ -1,1 +1,1 @@
-13
+The value of x = 13 and y = 16
