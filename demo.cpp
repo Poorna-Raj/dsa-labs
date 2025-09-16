@@ -4,6 +4,19 @@ using namespace std;
 
 int main()
 {
-    char grade = 'A';
-    cout << "Your'r grade is " << grade;
+    int age;
+    cin >> age;
+
+    if (age <= 0)
+    {
+        cout << "Invalid age";
+    }
+    else if (age < 18)
+    {
+        cout << "You are not an adult!";
+    }
+    else
+    {
+        cout << "You are an adult.";
+    }
 }
