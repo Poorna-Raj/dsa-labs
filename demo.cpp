@@ -2,14 +2,16 @@
 
 using namespace std;
 
+int sum(int num1, int num2);
+
 int main()
 {
-    int i = 0;
-    do
-    {
-        cout << i << "\n";
-        i++;
-    } while (i < 5);
+    int num1, num2;
+    cin >> num1 >> num2;
+    cout << "The total = " << sum(num1, num2);
+}
 
-    cout << "Value of i after the loop - " << i;
+int sum(int num1, int num2)
+{
+    return num1 + num2;
 }
