@@ -3,36 +3,35 @@
 
 using namespace std;
 
+void printPattern(int n);
+
 int main()
 {
-    string s;
-    cin >> s;
-    int value = 0;
-    int prev = 0;
-    map<char, int> numValues;
-    numValues['I'] = 1;
-    numValues['V'] = 5;
-    numValues['X'] = 10;
-    numValues['L'] = 50;
-    numValues['C'] = 100;
-    numValues['D'] = 500;
-    numValues['M'] = 1000;
+    int testCases;
+    cin >> testCases;
 
-    for (int i = s.length() - 1; i >= 0; i--)
+    for (int i = 0; i < testCases; i++)
     {
-        int currentVal = numValues[s[i]];
-
-        if (prev > currentVal)
-        {
-            value -= currentVal;
-        }
-        else
-        {
-            value += currentVal;
-        }
-
-        prev = currentVal;
+        int x;
+        cin >> x;
+        printPattern(x);
+        cout << '\n';
     }
+}
 
-    cout << value;
+void printPattern(int n)
+{
+    for (int i = 0; i < 2 * n - 1; i++)
+    {
+        for (int j = 0; j < 2 * n - 1; j++)
+        {
+            int top = i;
+            int left = j;
+            int right = (2 * n - 2) - j;
+            int bottom = (2 * n - 2) - i;
+
+            cout << (n - min(min(top, bottom), min(left, right)));
+        }
+        cout << endl;
+    }
 }
