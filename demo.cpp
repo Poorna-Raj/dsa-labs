@@ -1,38 +1,38 @@
 #include <iostream>
+#include <map>
 
 using namespace std;
 
-void printPattern(int a);
-
 int main()
 {
-    int testCases;
-    cin >> testCases;
+    string s;
+    cin >> s;
+    int value = 0;
+    int prev = 0;
+    map<char, int> numValues;
+    numValues['I'] = 1;
+    numValues['V'] = 5;
+    numValues['X'] = 10;
+    numValues['L'] = 50;
+    numValues['C'] = 100;
+    numValues['D'] = 500;
+    numValues['M'] = 1000;
 
-    for (int i = 0; i < testCases; i++)
+    for (int i = s.length() - 1; i >= 0; i--)
     {
-        int x;
-        cin >> x;
-        printPattern(x);
-        cout << '\n';
-    }
-}
+        int currentVal = numValues[s[i]];
 
-void printPattern(int a)
-{
-    int start;
-    for (int i = 1; i <= a; i++)
-    {
-        if (i % 2 == 0)
-            start = 0;
-        else
-            start = 1;
-
-        for (int j = 1; j <= i; j++)
+        if (prev > currentVal)
         {
-            cout << start;
-            start = 1 - start;
+            value -= currentVal;
         }
-        cout << endl;
+        else
+        {
+            value += currentVal;
+        }
+
+        prev = currentVal;
     }
+
+    cout << value;
 }
