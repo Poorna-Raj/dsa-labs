@@ -125,7 +125,7 @@ void printPattern(int a)
 
 ## Pattern 3
 
-![pattern 2](assets/pattern%203.png)
+![pattern 3](assets/pattern%203.png)
 
 `input.txt`
 
@@ -187,7 +187,7 @@ void printPattern(int a)
 
 ## Pattern 4
 
-![pattern 2](assets/pattern%204.png)
+![pattern 4](assets/pattern%204.png)
 
 `input.txt`
 
