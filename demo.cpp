@@ -1,37 +1,17 @@
 #include <iostream>
-#include <map>
+#include <queue>
+#include <vector>
 
 using namespace std;
 
-void printPattern(int n);
-
 int main()
 {
-    int testCases;
-    cin >> testCases;
+    priority_queue<int, vector<int>, greater<int>> que;
 
-    for (int i = 0; i < testCases; i++)
-    {
-        int x;
-        cin >> x;
-        printPattern(x);
-        cout << '\n';
-    }
-}
+    que.push(4);
+    que.push(10);
+    que.push(6);
+    que.emplace(4);
 
-void printPattern(int n)
-{
-    for (int i = 0; i < 2 * n - 1; i++)
-    {
-        for (int j = 0; j < 2 * n - 1; j++)
-        {
-            int top = i;
-            int left = j;
-            int right = (2 * n - 2) - j;
-            int bottom = (2 * n - 2) - i;
-
-            cout << (n - min(min(top, bottom), min(left, right)));
-        }
-        cout << endl;
-    }
+    cout << "Top is -> " << que.top() << endl;
 }
