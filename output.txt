@@ -1,1 +1,1 @@
-Top is -> 4
+Frequency of number 6 -> 2
