@@ -1,17 +1,15 @@
 #include <iostream>
-#include <map>
-#include <vector>
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
-    map<int, int> maps;
+    int x, y;
+    cin >> x;
+    y = abs(x);
 
-    maps.emplace(2, 10);
-    maps.emplace(5, 50);
-    maps.insert({1, 6});
+    int count = log10(y) + 1;
 
-    auto it = maps.find(5);
-    cout << it->second << endl;
+    cout << "Number of digits in " << x << " is " << count << "\n";
 }
