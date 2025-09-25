@@ -16,5 +16,12 @@ int main()
         y /= 10;
     }
 
-    cout << "Reverse = " << reverse << "\n";
+    if (reverse == x)
+    {
+        cout << "x is a palindrome number.";
+    }
+    else
+    {
+        cout << "x is not a palindrome number";
+    }
 }

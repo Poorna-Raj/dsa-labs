@@ -1,1 +1,1 @@
-reverse = 9877
+x is a palindrome number.
