@@ -1,27 +1,32 @@
 #include <iostream>
-#include <cmath>
+#include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    int x, y, sum;
+    int x;
     cin >> x;
-    y = abs(x);
-    sum = 0;
+    vector<int> sortedFactors;
 
-    while (y > 0)
+    for (int i = 1; i * i <= x; i++)
     {
-        sum += (y % 10) * (y % 10) * (y % 10);
-        y /= 10;
+        if (x % i == 0)
+        {
+            sortedFactors.push_back(i);
+
+            if ((x / i) != i)
+            {
+                sortedFactors.push_back(x / i);
+            }
+        }
     }
 
-    if (sum == x)
+    sort(sortedFactors.begin(), sortedFactors.end());
+
+    for (auto it : sortedFactors)
     {
-        cout << "x is an armstrong number.";
-    }
-    else
-    {
-        cout << "x is not an armstrong number";
+        cout << it << "  ";
     }
 }
