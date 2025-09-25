@@ -1,1 +1,1 @@
-Number of digits in -7789 is 4
+reverse = 9877

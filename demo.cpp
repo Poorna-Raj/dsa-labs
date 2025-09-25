@@ -5,11 +5,16 @@ using namespace std;
 
 int main()
 {
-    int x, y;
+    int x, y, reverse;
     cin >> x;
     y = abs(x);
+    reverse = 0;
 
-    int count = log10(y) + 1;
+    while (y > 0)
+    {
+        reverse = (reverse * 10) + y % 10;
+        y /= 10;
+    }
 
-    cout << "Number of digits in " << x << " is " << count << "\n";
+    cout << "Reverse = " << reverse << "\n";
 }
