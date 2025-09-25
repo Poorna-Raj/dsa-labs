@@ -1,29 +1,33 @@
 #include <iostream>
-#include <vector>
+#include <cmath>
 #include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    int x;
-    cin >> x;
-    int count = 0;
+    int x, y;
+    cin >> x >> y;
+    int gcd;
 
-    for (int i = 1; i <= x; i++)
+    while (x > 0 && y > 0)
     {
-        if (x % i == 0)
+        if (x > y)
         {
-            count++;
+            x %= y;
+        }
+        else
+        {
+            y %= x;
         }
     }
 
-    if (count != 2)
+    if (x == 0)
     {
-        cout << x << " is not a prime number." << "\n";
+        cout << "GCD = " << y;
     }
     else
     {
-        cout << x << " is a prime number." << "\n";
+        cout << "GCD = " << x;
     }
 }

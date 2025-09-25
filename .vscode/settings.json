@@ -3,6 +3,7 @@
     "*.embeddedhtml": "html",
     "random": "cpp",
     "ostream": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "numeric": "cpp"
   }
 }
