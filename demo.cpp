@@ -8,25 +8,22 @@ int main()
 {
     int x;
     cin >> x;
-    vector<int> sortedFactors;
+    int count = 0;
 
-    for (int i = 1; i * i <= x; i++)
+    for (int i = 1; i <= x; i++)
     {
         if (x % i == 0)
         {
-            sortedFactors.push_back(i);
-
-            if ((x / i) != i)
-            {
-                sortedFactors.push_back(x / i);
-            }
+            count++;
         }
     }
 
-    sort(sortedFactors.begin(), sortedFactors.end());
-
-    for (auto it : sortedFactors)
+    if (count != 2)
     {
-        cout << it << "  ";
+        cout << x << " is not a prime number." << "\n";
+    }
+    else
+    {
+        cout << x << " is a prime number." << "\n";
     }
 }
