@@ -1,33 +1,22 @@
 #include <iostream>
-#include <cmath>
-#include <algorithm>
 
 using namespace std;
 
+int count = 0;
+
+void func()
+{
+    if (count == 2)
+    {
+        return;
+    }
+    cout << count << "\n";
+    count++;
+    func();
+    cout << "After the func()" << "\n";
+}
+
 int main()
 {
-    int x, y;
-    cin >> x >> y;
-    int gcd;
-
-    while (x > 0 && y > 0)
-    {
-        if (x > y)
-        {
-            x %= y;
-        }
-        else
-        {
-            y %= x;
-        }
-    }
-
-    if (x == 0)
-    {
-        cout << "GCD = " << y;
-    }
-    else
-    {
-        cout << "GCD = " << x;
-    }
+    func();
 }

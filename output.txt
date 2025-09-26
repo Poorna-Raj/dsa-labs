@@ -1,1 +1,4 @@
-GCD = 6
+0
+1
+After the func()
+After the func()
