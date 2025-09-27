@@ -2,21 +2,21 @@
 
 using namespace std;
 
-int count = 0;
-
-void func()
-{
-    if (count == 2)
-    {
-        return;
-    }
-    cout << count << "\n";
-    count++;
-    func();
-    cout << "After the func()" << "\n";
-}
+void func(int N, int i);
 
 int main()
 {
-    func();
+    int N;
+    cin >> N;
+    func(N, 1);
+}
+
+void func(int N, int i)
+{
+    if (i > N)
+    {
+        return;
+    }
+    func(N, i + 1);
+    cout << i << "\n";
 }
