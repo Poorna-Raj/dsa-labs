@@ -2,21 +2,23 @@
 
 using namespace std;
 
-void func(int N, int i);
+int func(int N);
 
 int main()
 {
     int N;
     cin >> N;
-    func(N, 1);
+    cout << func(N) << "\n";
 }
 
-void func(int N, int i)
+int func(int N)
 {
-    if (i > N)
+    if (N == 0)
     {
-        return;
+        return 0;
     }
-    func(N, i + 1);
-    cout << i << "\n";
+    else
+    {
+        return N + func(N - 1);
+    }
 }
